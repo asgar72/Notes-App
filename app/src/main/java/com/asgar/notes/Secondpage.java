@@ -1,6 +1,7 @@
 package com.asgar.notes;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 
 import android.content.Context;
 import android.content.Intent;
@@ -26,6 +27,7 @@ public class Secondpage extends AppCompatActivity {
     SQLiteDatabase db;
     MySQLhelper ob;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -34,16 +36,16 @@ public class Secondpage extends AppCompatActivity {
 //For current time show
         txttime=(TextView)findViewById(R.id.txttime);
         Calendar calendar = Calendar.getInstance();
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm a  dd-MM-yyyy");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEE,d MMM yyyy HH:mm a");
         String datetime = simpleDateFormat.format(calendar.getTime());
         txttime.setText(datetime);
 //....//
 
 
-        btnsave=(Button) findViewById(R.id.btnsave);
-        txtitle=(EditText) findViewById(R.id.txtitle);
-        txnote=(EditText) findViewById(R.id.txnote);
-        txttime=(TextView) findViewById(R.id.txttime);
+        btnsave= findViewById(R.id.btnsave);
+        txtitle= findViewById(R.id.txtitle);
+        txnote= findViewById(R.id.txnote);
+        txttime=findViewById(R.id.txttime);
         ob =new MySQLhelper(this);
 
 
@@ -66,7 +68,6 @@ public class Secondpage extends AppCompatActivity {
                    Toast.makeText(getApplicationContext(), "Please enter some text", Toast.LENGTH_SHORT).show();
                    txnote.requestFocus();
                 }
-
                 else
                 {
                     db = ob.getWritableDatabase();
@@ -75,6 +76,8 @@ public class Secondpage extends AppCompatActivity {
                     txttime.setText("");
                     txnote.setText("");
                     Toast.makeText(getApplicationContext(), "Your Notes is save", Toast.LENGTH_LONG).show();
+                    Intent ob=new Intent(getApplicationContext(),FirstPage.class);
+                    startActivity(ob);
                 }
             }
         });

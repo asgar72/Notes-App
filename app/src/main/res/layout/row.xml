@@ -1,43 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="@color/white"
+    android:id="@+id/notes_container"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="8dp"
+    android:layout_margin="8dp">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@drawable/shape"
-        android:layout_marginTop="5dp">
-
-        <TextView
-            android:id="@+id/txt"
-            android:textColor="@color/black"
-            android:textStyle="bold"
+        android:orientation="vertical">
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20dp" />
-        <TextView
-            android:id="@+id/txttime"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textColor="@color/gray"
-            android:textSize="15dp"
-            />
+            android:layout_height="wrap_content">
 
+            <TextView
+                android:id="@+id/txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:padding="8dp"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:text="Title"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
 
         <TextView
             android:id="@+id/txnote"
-            android:textColor="#000000"
+            android:text="Notes.."
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            android:textStyle="normal"
+            android:maxLines="10"
+            android:padding="8dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="18dp"
-            android:layout_marginBottom="8dp"/>
-
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/txttime"
+            android:text="Date"
+            android:textColor="@color/black"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:textSize="14dp"
+            android:textStyle="normal"
+            android:maxLines="10"
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
     </LinearLayout>
-</ScrollView>
-    </LinearLayout>
+</androidx.cardview.widget.CardView>

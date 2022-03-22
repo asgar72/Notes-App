@@ -13,13 +13,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
 public class FirstPage extends AppCompatActivity {
 
-    Button btnadd;
+    FloatingActionButton btnadd;
     RecyclerView rec1;
     ArrayList<String> title,txttime,txnote;
     MyAdapter adp;
@@ -52,7 +54,7 @@ public class FirstPage extends AppCompatActivity {
         ob=new com.asgar.notes.MySQLhelper(this);
         LoadRecord();
 
-        btnadd=(Button) findViewById(R.id.btnadd);
+        btnadd= findViewById(R.id.btnadd);
         btnadd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
