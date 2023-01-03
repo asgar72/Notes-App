@@ -14,7 +14,6 @@ public class MySQLhelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("Create table notes(Title text ,Time text,Note text)");
-
     }
 
     @Override

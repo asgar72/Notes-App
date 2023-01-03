@@ -8,7 +8,7 @@ import android.os.Handler;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
-    private static int TIME_OUT = 4000; //Time to launch the another activity
+    private static int TIME_OUT = 1000; //Time to launch the another activity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

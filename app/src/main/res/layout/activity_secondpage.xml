@@ -4,62 +4,72 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Secondpage"
     android:orientation="vertical"
-    android:background="@color/white">
+    android:background="@color/black"
+    tools:context=".Secondpage">
 
-    <LinearLayout
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_notes"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/btnsave"
+                android:background="@android:color/transparent"
+                android:layout_width="?attr/actionBarSize"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_save"
+                android:padding="8dp"
+                />
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+    <EditText
+        android:id="@+id/txtitle"
+        android:hint="Title"
+        android:textColorHint="@color/white"
+        android:padding="8dp"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:singleLine="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/txnote"
+        android:hint="Add Notes: "
+        android:textColorHint="@color/white"
+        android:padding="8dp"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="normal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <EditText
-            android:id="@+id/txtitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:hint="Input title"
-            android:textColor="@color/black"
-            android:textColorHint="#808080"
-            android:textSize="30dp"/>
-        <TextView
-            android:id="@+id/txttime"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:textSize="15dp"
-            />
-
-    </LinearLayout>
-    <LinearLayout
+        />
+    <TextView
+        android:id="@+id/txttime"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <EditText
-            android:id="@+id/txnote"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:textSize="25dp"
-            android:textColorHint="#808080"
-            android:hint="Note"
-            android:layout_centerInParent="true"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:orientation="vertical">
-        <Button
-            android:id="@+id/btnsave"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="save"
-            android:textSize="20dp"
-            android:gravity="center"
-            android:layout_marginRight="80dp"
-            android:layout_marginLeft="80dp"/>
-    </LinearLayout>
-
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:padding="8dp"
+        />
 
 </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
