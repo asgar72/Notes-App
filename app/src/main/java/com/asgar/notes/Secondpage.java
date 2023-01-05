@@ -22,7 +22,7 @@ import java.util.Calendar;
 
 public class Secondpage extends AppCompatActivity {
 
-    ImageView btnsave;
+    Button btnsave;
     TextView txttime;
     EditText txtitle,txnote;
     SQLiteDatabase db;
@@ -37,7 +37,7 @@ public class Secondpage extends AppCompatActivity {
 //For current time show
         txttime=(TextView)findViewById(R.id.txttime);
         Calendar calendar = Calendar.getInstance();
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEE,d MMM yyyy HH:mm a");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("d MMM yyyy HH:mm a");
         String datetime = simpleDateFormat.format(calendar.getTime());
         txttime.setText(datetime);
 //....//
@@ -82,7 +82,5 @@ public class Secondpage extends AppCompatActivity {
                 }
             }
         });
-
-
     }
 }

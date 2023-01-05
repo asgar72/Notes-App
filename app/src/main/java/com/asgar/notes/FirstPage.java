@@ -23,33 +23,12 @@ import java.util.Collections;
 
 public class FirstPage extends AppCompatActivity {
 
-    FloatingActionButton btnadd;
+    Button btnadd;
     RecyclerView rec1;
     ArrayList<String> title,txttime,txnote;
     MyAdapter adp;
     MySQLhelper ob;
     SQLiteDatabase db;
-    void LoadRecord()
-    {
-        db=ob.getReadableDatabase();
-        Cursor cr=db.rawQuery("select * from notes",null);
-        title=new ArrayList<String>();
-        txttime=new ArrayList<String>();
-        txnote=new ArrayList<String>();
-        while(cr.moveToNext())
-        {
-            title.add(cr.getString(0));
-            txttime.add(cr.getString(1));
-            txnote.add(cr.getString(2));
-        }
-        Collections.reverse(title);
-        Collections.reverse(txttime);
-        Collections.reverse(txnote);
-        adp=new MyAdapter(this.title,txttime,txnote);
-        RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(getApplicationContext());
-        rec1.setLayoutManager(layoutManager);
-        rec1.setAdapter(adp);
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +50,26 @@ public class FirstPage extends AppCompatActivity {
                 }
             }
         });
-
+    }
+    void LoadRecord()
+    {
+        db=ob.getReadableDatabase();
+        Cursor cr=db.rawQuery("select * from notes",null);
+        title=new ArrayList<String>();
+        txttime=new ArrayList<String>();
+        txnote=new ArrayList<String>();
+        while(cr.moveToNext())
+        {
+            title.add(cr.getString(0));
+            txttime.add(cr.getString(1));
+            txnote.add(cr.getString(2));
+        }
+        Collections.reverse(title);
+        Collections.reverse(txttime);
+        Collections.reverse(txnote);
+        adp=new MyAdapter(this.title,txttime,txnote);
+        RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(getApplicationContext());
+        rec1.setLayoutManager(layoutManager);
+        rec1.setAdapter(adp);
     }
 }

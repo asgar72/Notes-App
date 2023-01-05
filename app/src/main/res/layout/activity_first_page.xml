@@ -6,32 +6,52 @@
     android:layout_height="match_parent"
     tools:context=".FirstPage"
     android:orientation="vertical"
-    android:background="@color/black">
+    android:background="@color/blue">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@color/gray">
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rec1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/search_bar"
-        android:background="@color/black"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp" />
-
-    </LinearLayout>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btnadd"
+        android:gravity="center"
+        android:id="@+id/txt"
+        >
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
+        android:text="Notes"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:textColor="@color/white"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_below="@id/txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rec1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/search_bar"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="1dp"
+            />
+    </LinearLayout>
+    <Button
+        android:id="@+id/btnadd"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="10dp"
-        android:src="@drawable/iadd" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center"
+        android:background="@drawable/shape2"
+        android:textColor="@color/blue"
+        android:visibility="visible"
+        android:text="ADD NEW NOTE"
+        android:textSize="18dp"
+        android:padding="15dp"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

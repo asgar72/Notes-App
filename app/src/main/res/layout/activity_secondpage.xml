@@ -4,61 +4,110 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/black"
+    android:background="@color/blue"
     tools:context=".Secondpage">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_notes"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize">
-        <RelativeLayout
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:id="@+id/btnsave"
-                android:background="@android:color/transparent"
-                android:layout_width="?attr/actionBarSize"
-                android:layout_height="?attr/actionBarSize"
-                android:layout_alignParentEnd="true"
-                android:src="@drawable/ic_save"
-                android:padding="8dp"
-                />
-        </RelativeLayout>
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="5dp"
+            android:text="Add Note"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:textStyle="bold" />
 
-    </androidx.appcompat.widget.Toolbar>
-    <EditText
-        android:id="@+id/txtitle"
-        android:hint="Title"
-        android:textColorHint="@color/white"
-        android:padding="8dp"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:textColor="@color/white"
-        android:singleLine="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <EditText
-        android:id="@+id/txnote"
-        android:hint="Add Notes: "
-        android:textColorHint="@color/white"
-        android:padding="8dp"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:textStyle="normal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
-    <TextView
-        android:id="@+id/txttime"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:textColor="@color/white"
-        android:textSize="15dp"
-        android:padding="8dp"
-        />
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@color/white"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardCornerRadius="10dp">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tittle"
+                    android:textColor="@color/black"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/txtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/gray"
+                    android:hint="Title"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Description"
+                    android:textColor="@color/black"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/txnote"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:background="@color/gray"
+                    android:hint="Description"
+                    android:padding="8dp"
+                    android:gravity="start"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="20sp"
+                    />
+
+                <TextView
+                    android:id="@+id/txttime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="15dp"
+                    android:padding="8dp"
+                    />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/btnsave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/shape3"
+            android:padding="8dp"
+            android:text="SAVE"
+            android:textColor="@color/blue"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
 </LinearLayout>
 
 
