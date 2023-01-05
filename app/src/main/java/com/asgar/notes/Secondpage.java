@@ -76,6 +76,7 @@ public class Secondpage extends AppCompatActivity {
                     txnote.setText("");
                     Toast.makeText(getApplicationContext(), "Your Notes is save", Toast.LENGTH_LONG).show();
                     Intent ob = new Intent(getApplicationContext(), FirstPage.class);
+                    startActivity(ob);
                     overridePendingTransition(0, 0);
                     finish();
                 }
