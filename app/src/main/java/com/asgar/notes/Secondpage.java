@@ -64,8 +64,6 @@ public class Secondpage extends AppCompatActivity {
                 }
                 else if (note.equals(""))
                 {
-
-
                    Toast.makeText(getApplicationContext(), "Please enter some text", Toast.LENGTH_SHORT).show();
                    txnote.requestFocus();
                 }
@@ -77,10 +75,16 @@ public class Secondpage extends AppCompatActivity {
                     txttime.setText("");
                     txnote.setText("");
                     Toast.makeText(getApplicationContext(), "Your Notes is save", Toast.LENGTH_LONG).show();
-                    Intent ob=new Intent(getApplicationContext(),FirstPage.class);
-                    startActivity(ob);
+                    Intent ob = new Intent(getApplicationContext(), FirstPage.class);
+                    overridePendingTransition(0, 0);
+                    finish();
                 }
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }

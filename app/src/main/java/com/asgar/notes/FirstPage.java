@@ -44,9 +44,8 @@ public class FirstPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 {
-                    Intent ob=new Intent(getApplicationContext(),Secondpage.class);
-                    startActivity(ob);
-                    finish();
+                    startActivity(new Intent(getApplicationContext(), Secondpage.class));
+                    overridePendingTransition(0, 0);
                 }
             }
         });
@@ -71,5 +70,10 @@ public class FirstPage extends AppCompatActivity {
         RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(getApplicationContext());
         rec1.setLayoutManager(layoutManager);
         rec1.setAdapter(adp);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }
